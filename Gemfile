@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Users / Oauth
 gem 'devise'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'byebug'
