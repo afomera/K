@@ -12,8 +12,9 @@
           </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown pull-left">
-                <%= link_to  "Notifications", "#", class: 'nav-link', id: 'dropdownMenu1', data: {toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'} %>
-
+                <%= link_to "#", class: 'nav-link', id: 'dropdownMenu1', data: {toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'} do %>
+                  Notifications <span class="label label-pill label-info">3</span>
+                <% end %>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                 <a class="dropdown-item" href="#">Next level +1 umami, freegan hammock cred biodiesel</a>
                 <a class="dropdown-item" href="#">Another action</a>
