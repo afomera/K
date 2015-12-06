@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   validate :validate_username
   # Only allow letter, number, underscore and punctuation.
-  validates :username, format: {message: "can only contain letters, numbers, underscores or dashes.", with: /\A[A-Za-z0-9\-\_]+\z/ }
+  validates :username, format: {message: "can only contain letters, numbers, underscores or dashes.", with: /\A[A-Za-z0-9\-\_]+\z/ }, presence: true
 
 
   private
