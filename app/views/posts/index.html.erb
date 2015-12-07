@@ -7,43 +7,45 @@
 
     <div class="row">
         <div class="card clearfix">
+
           <div class="card-block clearfix">
+
             <div class="col-md-3">
               <div class="user-info center">
-                <img src="https://placehold.it/180x180">
-                <h3 class="text-muted">Andrew</h3>
-                <small class="text-muted">32 posts</small>
+                <img src="https://placehold.it/140x140">
+                <h3 class="text-muted">
+                  <%= link_to "Andrew", root_path, class: 'card-link' %><br>
+                  <small class="text-muted">32 posts</small>
+                </h3>
 
-              </div>
-            </div>
+              </div> <!-- ./user-info -->
+            </div> <!-- ./col-md-3 -->
 
             <div class="col-md-9">
-
               <div class="post-content">
+                <h5 class="card-text"><strong>Hello Friends!</strong></h5>
                 <p class="card-text">Church-key food truck hella cornhole. Cronut vice wayfarers keytar. Tilde gentrify semiotics echo park selfies vice. Food truck yr portland, chicharrones chillwave try-hard small batch. Butcher pork belly schlitz fashion axe heirloom, pinterest plaid cray biodiesel. Organic ramps tote bag, sustainable squid migas food truck messenger bag roof party mlkshk fashion axe. Lumbersexual scenester kickstarter blog seitan.</p>
                 <p class="card-text">Pinterest affogato quinoa celiac. Mustache master cleanse gluten-free food truck, squid forage kombucha poutine intelligentsia. Retro kinfolk roof party, art party lumbersexual waistcoat irony master cleanse marfa selvage cliche actually. Meditation readymade yuccie, twee literally heirloom pinterest deep v XOXO raw denim chambray pabst. Pork belly XOXO tattooed, trust fund PBR&B heirloom authentic venmo. Taxidermy everyday carry chicharrones quinoa vinyl distillery. Tumblr umami locavore craft beer mustache.</p>
               </div>
-
-
-
             </div> <!-- ./col-md-9 -->
-          </div>
+          </div> <!-- ./card-block clearfix -->
+
           <div class="card-footer text-muted">
             <div class="row">
-            <div class="col-md-3">
-              <%= fa_icon "clock-o" %> 2 days ago
-            </div>
-            <div class="col-md-3">
-              <a class="card-link"><%= fa_icon "reply" %> Reply</a>
-              <a class="card-link"><%= fa_icon "heart" %> 3 likes</a>
-            </div>
-            <div class="col-md-3 col-md-offset-3">
-                <a class="card-link text-muted pull-right"><%= fa_icon "exclamation-triangle" %> Report this</a>
+              <div class="col-md-3">
+                <%= fa_icon "clock-o" %> 2 days ago
+              </div>
+              <div class="col-md-3">
+                <a class="card-link"><%= fa_icon "reply", text: "Reply" %></a>
+                <a class="card-link"><%= fa_icon "heart" %> 3 likes</a>
+              </div>
+              <div class="col-md-3 col-md-offset-3">
+                  <a class="card-link text-muted pull-right"><%= fa_icon "exclamation-triangle" %> Report</a>
+              </div>
             </div>
           </div>
-          </div>
-        </div>
-    </div>
+        </div> <!-- ./card clearfix -->
+    </div> <!-- ./row of one post -->
 
   </div>
 </div>
