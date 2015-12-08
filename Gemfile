@@ -14,6 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.0.0.alpha1'
 gem 'font-awesome-rails'
 
+# Local Time
+gem 'local_time', '~> 1.0'
+
 # Users / Oauth
 gem 'devise'
 gem 'omniauth-twitter'
