@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Lets use Bootstrap v4
 gem 'bootstrap', '~> 4.0.0.alpha1'
 gem 'font-awesome-rails'
+gem 'trix', '~> 0.9.0'
 
 # Local Time
 gem 'local_time', '~> 1.0'

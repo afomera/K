@@ -16,6 +16,7 @@
  @import "bootstrap-custom";
  @import "bootstrap";
  @import "font-awesome";
+ @import "trix";
 
 nav {
    margin-bottom: 1rem;
@@ -23,4 +24,8 @@ nav {
 
 .center {
   text-align: center;
+}
+
+trix-editor {
+  min-height: 150px;
 }
