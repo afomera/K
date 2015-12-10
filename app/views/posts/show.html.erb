@@ -1,1 +1,55 @@
-<%= @post.title %> posted by <%= @post.user.username %>
+<div class="card">
+  <div class="card-block">
+    <%= link_to "All Posts", posts_path, class: 'btn btn-info pull-right' %>
+    <h1 class="card-title"><%= @post.title %></h1>
+
+    <div class="card-block">
+      <!-- Start of Post -->
+      <div class="row">
+        <div class="card clearfix">
+          <div class="card-block clearfix">
+            <div class="col-md-3">
+              <div class="user-info center">
+                <img src="https://placehold.it/140x140">
+                <h3 class="text-muted">
+                  <%= link_to "#{@post.user.username}", root_path, class: 'card-link' %><br>
+                  <small class="text-muted"><%= @post.user.posts.count %> posts</small>
+                </h3>
+
+              </div> <!-- ./user-info -->
+            </div> <!-- ./col-md-3 -->
+
+              <div class="col-md-9">
+                <div class="post-content">
+                  <h5 class="card-text"><strong><%= link_to @post.title, post_path(@post), class: 'card-link' %></strong></h5>
+                    <div class="card-text">
+                      <%= markdownify @post.content %>
+                    </div>
+                </div>
+              </div> <!-- ./col-md-9 -->
+          </div> <!-- ./card-block clearfix -->
+
+          <div class="card-footer text-muted">
+            <div class="row">
+              <div class="col-md-3">
+                <%= fa_icon "clock-o" %> <%= local_time_ago @post.created_at %>
+              </div>
+              <div class="col-md-3">
+                <a class="card-link"><%= fa_icon "reply", text: 'Reply' %></a>
+                <a class="card-link"><%= fa_icon "heart" %></a>
+              </div>
+              <div class="col-md-3 col-md-offset-3">
+                  <a class="card-link text-muted pull-right"><%= fa_icon "exclamation-triangle" %></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- End of Post -->
+
+    </div>
+
+  </div>
+
+</div>
