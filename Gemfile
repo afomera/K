@@ -15,6 +15,13 @@ gem 'bootstrap', '~> 4.0.0.alpha1'
 gem 'font-awesome-rails'
 gem 'trix', '~> 0.9.0'
 
+# HTML Pipeline
+gem 'html-pipeline'
+gem 'sanitize' # For sanitizing with HTML Pipeline
+gem 'github-linguist' # For syntax highlighting
+gem 'github-markdown' # For github formatted markdown
+
+
 # Local Time
 gem 'local_time', '~> 1.0'
 

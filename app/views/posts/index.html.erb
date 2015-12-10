@@ -26,7 +26,7 @@
                 <div class="post-content">
                   <h5 class="card-text"><strong><%= link_to post.title, post_path(post), class: 'card-link' %></strong></h5>
                     <div class="card-text">
-                      <%= post.content %>
+                      <%= markdownify post.content %>
                     </div>
                 </div>
               </div> <!-- ./col-md-9 -->
