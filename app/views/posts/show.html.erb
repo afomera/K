@@ -1,8 +1,14 @@
 <div class="card">
   <div class="card-block">
-    <%= link_to "All Posts", posts_path, class: 'btn btn-info pull-right' %>
-    <%= link_to "Edit Post", edit_post_path(@post), class: 'btn btn-warning pull-right' %>
-    <%= link_to "Delete Post", post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'btn btn-danger pull-right' %>
+    <%= link_to posts_path, class: 'btn btn-info pull-right' do %>
+      <%= fa_icon "list-alt", text: 'All Posts' %>
+    <% end %>
+    <%= link_to edit_post_path(@post), class: 'btn btn-warning pull-right' do %>
+      <%= fa_icon "pencil", text: 'Edit Post' %>
+    <% end %>
+    <%= link_to post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'btn btn-danger pull-right' do %>
+      <%= fa_icon "trash", text: 'Delete Post' %>
+    <% end %>
     <h1 class="card-title"><%= @post.title %></h1>
 
     <div class="card-block">
