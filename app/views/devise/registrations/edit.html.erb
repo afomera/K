@@ -6,7 +6,9 @@
       <%= devise_error_messages! %>
 
       <% if current_user.avatar? %>
-        <%= image_tag @user.avatar.url(:thumb) %>
+        <%= image_tag @user.avatar.url(:thumb) %><br>
+        <%= f.label :remove_avatar %>
+        <%= f.check_box :remove_avatar %>
       <% end %>
 
 

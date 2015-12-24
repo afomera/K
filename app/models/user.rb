@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  before_save :delete_avatar, if: -> { remove_avatar == '1' && !avatar_updated_at_changed? }
   attr_accessor :login
+  attr_accessor :remove_avatar
 
   # Add Avatar Stuff for Paperclip
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "140x140#" }, default_url: "/images/:style/missing.png"
@@ -16,6 +19,9 @@ class User < ActiveRecord::Base
   has_many :posts
 
   private
+   def delete_avatar
+     self.avatar = nil
+   end
 
    def validate_username
      if User.where(email: username).exists?
