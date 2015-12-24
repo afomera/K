@@ -46,8 +46,8 @@
               <div class="col-md-3">
                 <a class="card-link"><%= fa_icon "reply", text: 'Reply' %></a>
 
-                <div id="likes" class="pull-right">
-                  <%= render partial: "likes" %>
+                <div id="post_<%= @post.id %>_likes" class="pull-right">
+                <%= render partial: "likes", locals: {post: @post} %>
                 </div>
               </div>
               <div class="col-md-3 col-md-offset-3">

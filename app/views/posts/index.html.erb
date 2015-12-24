@@ -42,7 +42,11 @@
               </div>
               <div class="col-md-3">
                 <a class="card-link"><%= fa_icon "reply", text: 'Reply' %></a>
-                <a class="card-link"><%= fa_icon "heart" %></a>
+
+                <div id="post_<%= post.id %>_likes" class="pull-right">
+                <%= render partial: "likes", locals: {post: post} %>
+                </div>
+                
               </div>
               <div class="col-md-3 col-md-offset-3">
                   <a class="card-link text-muted pull-right"><%= fa_icon "exclamation-triangle" %></a>

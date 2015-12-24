@@ -1,6 +1,9 @@
-<% if user_signed_in? && current_user.likes?(@post) %>
-<%= link_to (fa_icon "heart", text: 'Unlike'), post_like_path(@post) ,class: 'card-link', method: :delete, remote: true %>
-
+<% if user_signed_in? && current_user.likes?(post) %>
+  <%= %>
+  <%= link_to (fa_icon "heart", right: 'true', text: "#{post.likes.count unless post.likes.count < 1 }"), post_like_path(post), class: 'card-link', method: :delete, remote: true %>
 <% else %>
-  <%= link_to (fa_icon "heart"), post_like_path(@post) ,class: 'card-link', method: :post, remote: true %>
+  <%= link_to (fa_icon "heart", right: 'true', text: "#{post.likes.count unless post.likes.count < 1 }"), post_like_path(post), class: 'card-link', method: :post, remote: true %>
+<% end %>
+<% post.likes.each do |like| %>
+  <%= image_tag like.user.avatar.url(:thumb), alt: "#{like.user.username} liked this post", width: '16px', height: '16px' unless !like.user.avatar? %>
 <% end %>
