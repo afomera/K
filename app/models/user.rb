@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   validates :username, format: {message: "can only contain letters, numbers, underscores or dashes.", with: /\A[A-Za-z0-9\-\_]+\z/ }, presence: true
 
   has_many :posts
+  has_many :comments
   has_many :likes
 
   def likes?(post)

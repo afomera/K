@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts do
     resource :like, module: :posts
+    resources :comments, module: :posts
   end
 
   root to: 'pages#home'
