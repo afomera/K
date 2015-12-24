@@ -46,14 +46,14 @@
         <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
       </div>
 
-      <div class="actions">
+      <div class="form-group">
         <%= f.submit "Update", class: 'btn btn-primary' %>
       </div>
     <% end %>
 
     <h2 class="card-text">Cancel my account</h2>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), class: 'btn btn-secondary', data: { confirm: "Are you sure?" }, method: :delete %></p>
 
     <%= link_to "Back", :back %>
 
