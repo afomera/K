@@ -21,6 +21,8 @@ gem 'sanitize' # For sanitizing with HTML Pipeline
 gem 'github-linguist' # For syntax highlighting
 gem 'github-markdown' # For github formatted markdown
 
+# Paperclip for uploading Avatars
+gem 'paperclip', '~> 4.3'
 
 # Local Time
 gem 'local_time', '~> 1.0'
