@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessor :login
 
+  # Add Avatar Stuff for Paperclip
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "140x140#" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
   validate :validate_username
   # Only allow letter, number, underscore and punctuation.
   validates :username, format: {message: "can only contain letters, numbers, underscores or dashes.", with: /\A[A-Za-z0-9\-\_]+\z/ }, presence: true
