@@ -59,7 +59,11 @@
         </div>
       </div>
       <!-- End of Post -->
-      <%= render @post.comments %>
+      <% @post.comments.each do |comment| %>
+        <%= comment.user.username %><br>
+        <%= markdownify comment.content %><br>
+        <hr>
+      <% end %>
 
     </div>
   </div>
