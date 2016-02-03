@@ -1,0 +1,27 @@
+<%= form_for [@post, @comment] do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= @comment.errors.count %> Error(s) prohibited this from being saved:</h2>
+        <ul>
+          <% @comment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+  <h3>In reply to:</h3>
+  <br>
+  <%= markdownify @post.content %>
+
+  <hr>
+  <div class="form-group">
+		Your reply <br >
+
+		<%= f.trix_editor :content, :placeholder => "Post your content here!", :rows => 10, class: "form-control" %>
+	</div>
+
+	<div class="form-actions">
+		<%= f.button (f.object.new_record? ? "Create" : "Update") + " Comment", class: "btn btn-primary" %>
+		<%= link_to "Cancel", posts_path, :class => "btn btn-secondary" %>
+	</div>
+<% end %>

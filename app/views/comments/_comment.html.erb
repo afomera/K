@@ -1,0 +1,4 @@
+<% @post.comments.each do |comment| %>
+<%= comment.user.username %>
+<%= markdownify comment.content %>
+<% end %>
