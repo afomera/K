@@ -6,3 +6,5 @@ The original goal / plan was to have a Rails app backend / frontend that I could
 
 # Todo
 - Make uploading avatar on user edit page not require a password
+- You should only be able to edit/delete other peoples post if you're an admin
+- You should only be able to edit/delete your own post if you are a normal user
