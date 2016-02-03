@@ -60,9 +60,51 @@
       </div>
       <!-- End of Post -->
       <% @post.comments.each do |comment| %>
-        <%= comment.user.username %><br>
-        <%= markdownify comment.content %><br>
-        <hr>
+
+        <!-- Start of comment <%= comment.id %> -->
+
+        <div class="row">
+          <div class="card clearfix">
+            <div class="card-block clearfix">
+              <div class="col-md-3">
+                <div class="user-info center">
+                  <%= image_tag comment.user.avatar.url(:thumb) %>
+                  <!--<img src="https://placehold.it/140x140"> -->
+                  <h3 class="text-muted">
+                    <%= link_to "#{comment.user.username}", root_path, class: 'card-link' %><br>
+                    <small class="text-muted"><%= comment.user.posts.count %> posts</small>
+                  </h3>
+
+                </div> <!-- ./user-info -->
+              </div> <!-- ./col-md-3 -->
+
+                <div class="col-md-9">
+                  <div class="post-content">
+                    <h5 class="card-text"><strong>in reply to: <%= link_to @post.title, post_path(@post), class: 'card-link' %></strong></h5>
+                      <div class="card-text">
+                        <%= markdownify comment.content %>
+                      </div>
+                  </div>
+                </div> <!-- ./col-md-9 -->
+            </div> <!-- ./card-block clearfix -->
+
+            <div class="card-footer text-muted">
+              <div class="row">
+                <div class="col-md-3">
+                  <%= fa_icon "clock-o" %> <%= local_time_ago comment.created_at %>
+                </div>
+                <div class="col-md-3">
+                  <% link_to (fa_icon "reply", text: 'Reply'), new_post_comment_path(@post), class: 'card-link' %>
+
+                </div>
+                <div class="col-md-3 col-md-offset-3">
+                    <a class="card-link text-muted pull-right"><%= fa_icon "exclamation-triangle" %></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       <% end %>
 
     </div>
