@@ -22,7 +22,7 @@ gem 'github-linguist' # For syntax highlighting
 gem 'github-markdown' # For github formatted markdown
 
 # Paperclip for uploading Avatars
-gem 'paperclip', '~> 4.3'
+gem 'paperclip', '~> 6.1'
 
 # Local Time
 gem 'local_time', '~> 1.0'
